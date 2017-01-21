@@ -1,3 +1,9 @@
 Plotly.d3.csv('data/anime.csv', function(err, rows) {
-  //TODO: Figure it all out.
+  
+  function unpack(rows, key) {
+  	return rows.map(function(row) { return row[key] });
+  }
+
+  // var data
+
 });
