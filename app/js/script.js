@@ -1,4 +1,5 @@
-// This is the example: https://plot.ly/javascript/
+// https://plot.ly/javascript/ajax-call/
+
 
 Plotly.d3.csv('data/anime.csv', function(err, rows) {
 
