@@ -1,9 +1,11 @@
+// This is the example: https://plot.ly/javascript/
+
 Plotly.d3.csv('data/anime.csv', function(err, rows) {
-  
+
   function unpack(rows, key) {
   	return rows.map(function(row) { return row[key] });
   }
 
-  // var data
+  var data;
 
 });
