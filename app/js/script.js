@@ -1,4 +1,5 @@
 /*
+TODO: Draw out what you want it to look like
 TODO: Only graph if it's a TV
 TODO: Color by genre
 TODO: Add labels
@@ -29,8 +30,6 @@ function processData(allRows) {
       size.push( parseInt(row.members) );
     }
   }
-
-  console.log(row);
 
   var rankBySize = rank(size);
 
