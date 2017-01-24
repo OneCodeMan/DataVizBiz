@@ -1,4 +1,5 @@
 /*
+TODO: Only graph if it's a TV
 TODO: Color by genre
 TODO: Add labels
 */
@@ -21,11 +22,15 @@ function processData(allRows) {
   var size = [];
 
   for (var i = 0; i < allRows.length; i++) {
-    row = allRows[i];
-    x.push( parseInt(row['episodes']) );
-    y.push( parseFloat(row['rating']) );
-    size.push( parseInt(row['members']) );
+    var row = allRows[i];
+    if (row.type === 'TV') {
+      x.push( parseInt(row.episodes) );
+      y.push( parseFloat(row.rating) );
+      size.push( parseInt(row.members) );
+    }
   }
+
+  console.log(row);
 
   var rankBySize = rank(size);
 
@@ -48,8 +53,8 @@ function makePlotly(x, y, sizes) {
     showlegend: false,
     height: 600,
     width: 1200,
-    xaxis: { title: 'Episodes' },
-    yaxis: { title: 'Rating' }
+    xaxis: { title: 'Episode Count' },
+    yaxis: { title: 'Overall Rating' }
   }
 
   Plotly.newPlot('display', traces, layout);
