@@ -5,29 +5,42 @@ function makeplot() {
 };
 
 function processData(allRows) {
-  console.log(allRows);
-  var x = [];
-  var y = [];
-  var standard_deviation = [];
+  var xRaw = [];
+  var yRaw = [];
+  var size = [];
 
   for (var i = 0; i < allRows.length; i++) {
     row = allRows[i];
-    x.push( row['episodes'] );
-    y.push( row['rating'] );
+    xRaw.push( parseInt(row['episodes']) );
+    yRaw.push( parseFloat(row['rating']) );
   }
-  console.log('X', x, 'Y', y, 'SD', standard_deviation);
-  makePlotly(x, y, standard_deviation);
+
+  var x = xRaw.sort();
+  var y = yRaw.sort();
+
+  makePlotly(x, y);
 
 }
-function makePlotly(x, y, standard_deviation) {
+function makePlotly(x, y) {
   var plotDiv = document.getElementById('plot');
   var traces = [{
     x: x,
-    y: y
+    y: y,
+    mode: 'markers',
+    marker: {
+      size: [30]
+    }
   }];
 
-  Plotly.newPlot('display', traces,
-    {title: 'Anime'});
-  };
+  var layout = {
+    title: 'Anime',
+    showlegend: false,
+    height: 600,
+    width: 1200
+  }
+
+  Plotly.newPlot('display', traces, layout);
+
+  }
 
 makeplot();
