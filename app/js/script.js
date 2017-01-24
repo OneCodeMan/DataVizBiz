@@ -1,3 +1,14 @@
+/*
+TODO: Color by genre
+TODO: Add labels
+*/
+
+function rank(arr) {
+  var sorted = arr.slice().sort(function(a, b) {return b - a;});
+  var ranks = arr.slice().map(function(v) { return sorted.indexOf(v) + 1 });
+  return ranks;
+}
+
 function makeplot() {
   Plotly.d3.csv('data/anime.csv', function(data) {
     processData(data);
@@ -5,30 +16,30 @@ function makeplot() {
 };
 
 function processData(allRows) {
-  var xRaw = [];
-  var yRaw = [];
+  var x = [];
+  var y = [];
   var size = [];
 
   for (var i = 0; i < allRows.length; i++) {
     row = allRows[i];
-    xRaw.push( parseInt(row['episodes']) );
-    yRaw.push( parseFloat(row['rating']) );
+    x.push( parseInt(row['episodes']) );
+    y.push( parseFloat(row['rating']) );
+    size.push( parseInt(row['members']) );
   }
 
-  var x = xRaw.sort();
-  var y = yRaw.sort();
+  var rankBySize = rank(size);
 
-  makePlotly(x, y);
+  makePlotly(x, y, rankBySize);
 
 }
-function makePlotly(x, y) {
+function makePlotly(x, y, sizes) {
   var plotDiv = document.getElementById('plot');
   var traces = [{
     x: x,
     y: y,
     mode: 'markers',
     marker: {
-      size: [30]
+      size: sizes
     }
   }];
 
@@ -36,7 +47,9 @@ function makePlotly(x, y) {
     title: 'Anime',
     showlegend: false,
     height: 600,
-    width: 1200
+    width: 1200,
+    xaxis: { title: 'Episodes' },
+    yaxis: { title: 'Rating' }
   }
 
   Plotly.newPlot('display', traces, layout);
