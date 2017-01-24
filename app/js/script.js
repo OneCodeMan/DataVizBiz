@@ -1,6 +1,5 @@
 /*
 TODO: Draw out what you want it to look like
-TODO: Only graph if it's a TV
 TODO: Color by genre
 TODO: Add labels
 */
@@ -21,16 +20,22 @@ function processData(allRows) {
   var x = [];
   var y = [];
   var size = [];
+  var genres = [];
 
   for (var i = 0; i < allRows.length; i++) {
     var row = allRows[i];
     if (row.type === 'TV') {
+      var genreRaw = row.genre;
+      var genre = genreRaw.substring(0, genreRaw.indexOf(','));
+      genres.push(genre);
       x.push( parseInt(row.episodes) );
       y.push( parseFloat(row.rating) );
       size.push( parseInt(row.members) );
     }
   }
 
+  var genreSet = new Set(genres);
+  console.log(genreSet);
   var rankBySize = rank(size);
 
   makePlotly(x, y, rankBySize);
