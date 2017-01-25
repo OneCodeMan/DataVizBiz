@@ -2,6 +2,7 @@
 TODO: Draw out what you want it to look like
 TODO: Make a default scale
 TODO: Add hover info
+TODO: Add more todos
 */
 
 function rank(arr) {
