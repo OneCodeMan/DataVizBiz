@@ -10,21 +10,29 @@ function rank(arr) {
   return ranks;
 }
 
+function setColors(genres) {
+  var circColors = [];
+  for(var i = 0; i < genres.length; i++) {
+    circColors.push(colorChoices[genres[i]]);
+  }
+  return circColors;
+}
+
 var colorChoices = {
-  'action' : '#F45866',
-  'scifi' : '#00A5CF',
-  'comedy' : '#F8F32B',
-  'drama' : '#750D37',
-  'adventure' : '#B3DEC1',
-  'mystery' : '#C1B098',
-  'psychological' : '#2B2D42',
-  'fantasy' : '#D2F898',
-  'ecchi' : '#FF88DC',
-  'josei' : '#D90368',
-  'demons' : '#F7567C',
-  'game' : '#FDF0D5',
-  'cars' : '#DC9E82',
-  'romance' : '#CA6680'
+  'Action' : '#F45866',
+  'Sci-Fi' : '#00A5CF',
+  'Comedy' : '#F8F32B',
+  'Drama' : '#750D37',
+  'Adventure' : '#B3DEC1',
+  'Mystery' : '#C1B098',
+  'Psychological' : '#2B2D42',
+  'Fantasy' : '#D2F898',
+  'Ecchi' : '#FF88DC',
+  'Josei' : '#D90368',
+  'Demons' : '#F7567C',
+  'Game' : '#FDF0D5',
+  'Cars' : '#DC9E82',
+  'Romance' : '#CA6680'
 }
 
 function makeplot() {
@@ -51,21 +59,23 @@ function processData(allRows) {
     }
   }
 
-  var genreSet = new Set(genres);
-  console.log(genreSet);
-  var rankBySize = rank(size);
+  var colors = setColors(genres);
+  var radiiSizes = rank(size);
+  console.log(colors);
+  //console.log(new Set(genres));
 
-  makePlotly(x, y, rankBySize);
+  makePlotly(x, y, radiiSizes, colors);
 
 }
-function makePlotly(x, y, sizes) {
+function makePlotly(x, y, sizes, colors) {
   var plotDiv = document.getElementById('plot');
   var traces = [{
     x: x,
     y: y,
     mode: 'markers',
     marker: {
-      size: sizes
+      size: sizes,
+      color: colors,
     }
   }];
 
