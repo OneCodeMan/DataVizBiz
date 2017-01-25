@@ -1,6 +1,6 @@
 /*
 TODO: Draw out what you want it to look like
-TODO: Change x-axis scale
+TODO: Make a default scale
 TODO: Color by genre
 TODO: Add labels
 */
@@ -50,8 +50,9 @@ function processData(allRows) {
   var y = [];
   var size = [];
   var genres = [];
+  var numData = 700;
 
-  for (var i = 0; i < allRows.length; i++) {
+  for (var i = 0; i < numData; i++) {
     var row = allRows[i];
     if (row.type === 'TV') {
       var genreRaw = row.genre;
