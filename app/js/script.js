@@ -8,8 +8,9 @@ TODO: Add labels
 function rank(arr) {
   var sorted = arr.slice().sort(function(a, b) {return b - a;});
   var ranks = arr.slice().map(function(v) { return sorted.indexOf(v) + 1 });
+
   for (var i = 0; i < ranks.length; i++) {
-    ranks[i] = ranks[i] * 0.5;
+    ranks[i] = ranks[i] * 0.7;
   }
   return ranks;
 }
@@ -58,9 +59,9 @@ function processData(allRows) {
       var genreRaw = row.genre;
       var genre = genreRaw.substring(0, genreRaw.indexOf(','));
       genres.push(genre);
-      x.push( parseInt(row.episodes) );
+      x.push( parseInt(row.members) );
       y.push( parseFloat(row.rating) );
-      size.push( parseInt(row.members) );
+      size.push( parseInt(row.episodes) );
     }
   }
 
@@ -78,7 +79,7 @@ function makePlotly(x, y, sizes, colors) {
     y: y,
     mode: 'markers',
     marker: {
-      size: sizes,
+      size: sizes, // determined by how many people watch it
       color: colors,
     }
   }];
@@ -88,7 +89,7 @@ function makePlotly(x, y, sizes, colors) {
     showlegend: false,
     height: 600,
     width: 900,
-    xaxis: { title: 'Episode Count' },
+    xaxis: { title: 'Number of Fans' },
     yaxis: { title: 'Overall Rating' }
   }
 
