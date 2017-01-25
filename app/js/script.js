@@ -12,19 +12,19 @@ function rank(arr) {
 
 var colorChoices = {
   'action' : '#F45866',
-  'scifi' : '#F45866',
-  'comedy' : '#F45866',
-  'drama' : '#F45866',
-  'adventure' : '#F45866',
-  'mystery' : '#F45866',
-  'psychological' : '#F45866',
-  'fantasy' : '#F45866',
-  'ecchi' : '#F45866',
-  'josei' : '#F45866',
-  'demons' : '#F45866',
-  'game' : '#F45866',
-  'cars' : '#F45866',
-  'romance' : '#F45866'
+  'scifi' : '#00A5CF',
+  'comedy' : '#F8F32B',
+  'drama' : '#750D37',
+  'adventure' : '#B3DEC1',
+  'mystery' : '#C1B098',
+  'psychological' : '#2B2D42',
+  'fantasy' : '#D2F898',
+  'ecchi' : '#FF88DC',
+  'josei' : '#D90368',
+  'demons' : '#F7567C',
+  'game' : '#FDF0D5',
+  'cars' : '#DC9E82',
+  'romance' : '#CA6680'
 }
 
 function makeplot() {
