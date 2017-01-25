@@ -1,5 +1,6 @@
 /*
 TODO: Draw out what you want it to look like
+TODO: Change x-axis scale
 TODO: Color by genre
 TODO: Add labels
 */
@@ -7,6 +8,9 @@ TODO: Add labels
 function rank(arr) {
   var sorted = arr.slice().sort(function(a, b) {return b - a;});
   var ranks = arr.slice().map(function(v) { return sorted.indexOf(v) + 1 });
+  for (var i = 0; i < ranks.length; i++) {
+    ranks[i] = ranks[i] * 0.5;
+  }
   return ranks;
 }
 
@@ -61,8 +65,7 @@ function processData(allRows) {
 
   var colors = setColors(genres);
   var radiiSizes = rank(size);
-  console.log(colors);
-  //console.log(new Set(genres));
+  console.log(radiiSizes);
 
   makePlotly(x, y, radiiSizes, colors);
 
@@ -83,7 +86,7 @@ function makePlotly(x, y, sizes, colors) {
     title: 'Anime',
     showlegend: false,
     height: 600,
-    width: 1200,
+    width: 900,
     xaxis: { title: 'Episode Count' },
     yaxis: { title: 'Overall Rating' }
   }
