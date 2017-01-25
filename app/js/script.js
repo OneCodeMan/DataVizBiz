@@ -1,8 +1,7 @@
 /*
 TODO: Draw out what you want it to look like
 TODO: Make a default scale
-TODO: Color by genre
-TODO: Add labels
+TODO: Add hover info
 */
 
 function rank(arr) {
@@ -10,7 +9,7 @@ function rank(arr) {
   var ranks = arr.slice().map(function(v) { return sorted.indexOf(v) + 1 });
 
   for (var i = 0; i < ranks.length; i++) {
-    ranks[i] = ranks[i] * 0.7;
+    ranks[i] = ranks[i] * 0.2;
   }
   return ranks;
 }
@@ -79,13 +78,13 @@ function makePlotly(x, y, sizes, colors) {
     y: y,
     mode: 'markers',
     marker: {
-      size: sizes, 
+      size: sizes,
       color: colors,
     }
   }];
 
   var layout = {
-    title: 'Anime',
+    title: 'Analysis of Anime TV Shows',
     showlegend: false,
     height: 600,
     width: 900,
