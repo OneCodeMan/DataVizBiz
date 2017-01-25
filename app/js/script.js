@@ -79,7 +79,7 @@ function makePlotly(x, y, sizes, colors) {
     y: y,
     mode: 'markers',
     marker: {
-      size: sizes, // determined by how many people watch it
+      size: sizes, 
       color: colors,
     }
   }];
