@@ -94,6 +94,7 @@ function makePlotly(x, y, sizes, colors) {
     width: 900,
     xaxis: {
       title: 'Number of Fans',
+      range: [0, 300000],
       titlefont: {
         size: 20
       }
