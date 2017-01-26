@@ -1,6 +1,6 @@
 /*
-TODO: Draw out what you want it to look like
-TODO: Make a default scale
+TODO: https://plot.ly/javascript/font/
+TODO: 0K-300K AXIS
 TODO: Add hover info
 TODO: Add more todos
 */
@@ -86,11 +86,24 @@ function makePlotly(x, y, sizes, colors) {
 
   var layout = {
     title: 'Analysis of Anime TV Shows',
+    titlefont: {
+      size: 30
+    },
     showlegend: false,
     height: 600,
     width: 900,
-    xaxis: { title: 'Number of Fans' },
-    yaxis: { title: 'Overall Rating' }
+    xaxis: {
+      title: 'Number of Fans',
+      titlefont: {
+        size: 20
+      }
+    },
+    yaxis: {
+      title: 'Overall Rating',
+      titlefont: {
+        size: 20
+      }
+    }
   }
 
   Plotly.newPlot('display', traces, layout);
