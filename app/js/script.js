@@ -1,8 +1,8 @@
 /*
-TODO: https://plot.ly/javascript/font/
-TODO: 0K-300K AXIS
 TODO: Add hover info
 TODO: Add more todos
+TODO: Highest rated tv anime
+TODO: Lowest rated tv anime
 */
 
 function rank(arr) {
@@ -87,7 +87,8 @@ function makePlotly(x, y, sizes, colors) {
   var layout = {
     title: 'Analysis of Anime TV Shows',
     titlefont: {
-      size: 30
+      size: 30,
+      color: '#81D2C7'
     },
     showlegend: false,
     height: 600,
@@ -96,13 +97,15 @@ function makePlotly(x, y, sizes, colors) {
       title: 'Number of Fans',
       range: [0, 300000],
       titlefont: {
-        size: 20
+        size: 20,
+        color: '#81D2C7'
       }
     },
     yaxis: {
       title: 'Overall Rating',
       titlefont: {
-        size: 20
+        size: 20,
+        color: '#81D2C7'
       }
     }
   }
