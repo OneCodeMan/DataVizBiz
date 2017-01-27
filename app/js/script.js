@@ -1,8 +1,9 @@
 /*
 https://plot.ly/javascript/hover-events/
 TODO: Add more todos
-TODO: Highest rated tv anime
-TODO: Lowest rated tv anime
+TODO: Filter
+
+TODO: The next chart!
 */
 
 function rank(arr) {
