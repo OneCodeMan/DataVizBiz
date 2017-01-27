@@ -52,6 +52,7 @@ function processData(allRows) {
   var size = [];
   var genres = [];
   var numData = 700;
+  var description = {genres: []};
 
   for (var i = 0; i < numData; i++) {
     var row = allRows[i];
@@ -62,6 +63,7 @@ function processData(allRows) {
       x.push( parseInt(row.members) );
       y.push( parseFloat(row.rating) );
       size.push( parseInt(row.episodes) );
+      description.genres.push(genreRaw);
     }
   }
 
@@ -69,14 +71,15 @@ function processData(allRows) {
   var radiiSizes = rank(size);
   console.log(radiiSizes);
 
-  makePlotly(x, y, radiiSizes, colors);
+  makePlotly(x, y, radiiSizes, colors, description);
 
 }
-function makePlotly(x, y, sizes, colors) {
+function makePlotly(x, y, sizes, colors, description) {
   var plotDiv = document.getElementById('plot');
   var traces = [{
     x: x,
     y: y,
+    text: description.genres,
     mode: 'markers',
     marker: {
       size: sizes,
