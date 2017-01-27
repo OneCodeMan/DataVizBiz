@@ -52,7 +52,11 @@ function processData(allRows) {
   var size = [];
   var genres = [];
   var numData = 700;
-  var description = {genres: []};
+  var descriptionComponents = {
+    genres: [],
+    names: [],
+  };
+  var description = [];
 
   for (var i = 0; i < numData; i++) {
     var row = allRows[i];
@@ -63,13 +67,28 @@ function processData(allRows) {
       x.push( parseInt(row.members) );
       y.push( parseFloat(row.rating) );
       size.push( parseInt(row.episodes) );
-      description.genres.push(genreRaw);
+      descriptionComponents.names.push(row.name);
+      descriptionComponents.genres.push(genreRaw);
     }
   }
 
   var colors = setColors(genres);
   var radiiSizes = rank(size);
-  console.log(radiiSizes);
+
+  descriptionComponents.members = x;
+  descriptionComponents.ratings = y;
+  descriptionComponents.episodes = size;
+
+  for (var i = 0; i < numData; i++) {
+    var currDescription = 'Name: ' + descriptionComponents.names[i] +
+                          'Genre: ' + descriptionComponents.genres[i] +
+                          'Members: ' + descriptionComponents.members[i] +
+                          'Rating: ' + descriptionComponents.ratings[i] +
+                          'Episode count: ' + descriptionComponents.episodes[i];
+    description.push(currDescription);
+
+  }
+
 
   makePlotly(x, y, radiiSizes, colors, description);
 
@@ -79,7 +98,7 @@ function makePlotly(x, y, sizes, colors, description) {
   var traces = [{
     x: x,
     y: y,
-    text: description.genres,
+    text: description,
     mode: 'markers',
     marker: {
       size: sizes,
