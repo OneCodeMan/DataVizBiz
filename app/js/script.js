@@ -1,5 +1,5 @@
 /*
-TODO: Add hover info
+https://plot.ly/javascript/hover-events/
 TODO: Add more todos
 TODO: Highest rated tv anime
 TODO: Lowest rated tv anime
@@ -66,7 +66,9 @@ function processData(allRows) {
       genres.push(genre);
       x.push( parseInt(row.members) );
       y.push( parseFloat(row.rating) );
+
       size.push( parseInt(row.episodes) );
+
       descriptionComponents.names.push(row.name);
       descriptionComponents.genres.push(genreRaw);
     }
@@ -80,11 +82,11 @@ function processData(allRows) {
   descriptionComponents.episodes = size;
 
   for (var i = 0; i < numData; i++) {
-    var currDescription = 'Name: ' + descriptionComponents.names[i] +
-                          'Genre: ' + descriptionComponents.genres[i] +
-                          'Members: ' + descriptionComponents.members[i] +
-                          'Rating: ' + descriptionComponents.ratings[i] +
-                          'Episode count: ' + descriptionComponents.episodes[i];
+    var currEpisode = isNaN(descriptionComponents.episodes[i]) ? 'Unknown' : descriptionComponents.episodes[i];
+    var currDescription = descriptionComponents.names[i] + ' (' +
+                          descriptionComponents.genres[i] + '), ' +
+                          descriptionComponents.members[i] + ' members, ' +
+                          currEpisode + ' episodes.';
     description.push(currDescription);
 
   }
