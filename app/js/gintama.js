@@ -6,10 +6,29 @@ req.onload = function() {
   if (req.status === 200) {
     var contentRaw = req.responseText;
     var contentUnsorted = contentRaw.split('\n');
-    var content = contentUnsorted.sort(function(a, b) {
+    var contentArr = contentUnsorted.sort(function(a, b) {
       return b.length - a.length;
     })
-    console.log(content);
+    var titles = [];
+
+    for(var i = 0; i < contentArr.length; i++) {
+      titles[i] = {'text': contentArr[i], 'length': contentArr[i].length};
+    }
+
+    var longEp = new Vue({
+      el: '#gintama-div',
+      data: {
+        count: 10,
+        titles: titles
+      },
+
+      methods: {
+        setCount: function(titles, limit) {
+          return titles.slice(0, limit);
+        }
+      }
+
+    })
 
   } else {
     console.log("Error");

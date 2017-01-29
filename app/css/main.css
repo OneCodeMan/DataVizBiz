@@ -2,7 +2,7 @@
   background-color: #81D2C7; }
 
 .jumbotron-2 {
-  background-color: #95B8D1; }
+  background-color: #90C2E7; }
 
 .jumbotron {
   text-align: center;
@@ -14,3 +14,14 @@
   max-width: 900px;
   overflow: scroll;
   min-height: 700px; }
+
+.container-fluid #gintama-div {
+  min-height: 600px;
+  font-size: 20px;
+  font-weight: bold; }
+  .container-fluid #gintama-div strong {
+    font-size: 25px; }
+  .container-fluid #gintama-div .poop {
+    font-size: 30px; }
+  .container-fluid #gintama-div h3 {
+    text-align: center; }
