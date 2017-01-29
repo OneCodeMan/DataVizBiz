@@ -45,12 +45,16 @@
     text-align: center; }
 
 .last {
-  min-height: 400px; }
+  min-height: 200px; }
   .last .goodbye-text {
     font-size: 25px; }
-  .last .social-div {
-    border: solid 1px black;
+  .last .credit-list {
     text-align: center;
-    padding: 50px;
-    color: #FCF7FF;
-    border-radius: 1px; }
+    text-decoration: underline; }
+    .last .credit-list li a {
+      font-size: 25px;
+      cursor: pointer;
+      color: #252627;
+      font-weight: bold; }
+      .last .credit-list li a:hover {
+        font-size: 32px; }

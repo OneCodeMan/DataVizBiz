@@ -65,18 +65,27 @@
 }
 
 .last {
-  min-height: 400px;
+  min-height: 200px;
 
   .goodbye-text {
     font-size: 25px;
   }
 
-  .social-div {
-    border: solid 1px black;
+  .credit-list {
     text-align: center;
-    padding: 50px;
-    color: $default-white;
-    border-radius: 1px;
-  }
+    text-decoration: underline;
 
+    li {
+      a {
+          font-size: 25px;
+          cursor: pointer;
+          color: $default-black;
+          font-weight: bold;
+          &:hover {
+              font-size: 32px;
+          }
+      }
+    }
+
+  }
 }
