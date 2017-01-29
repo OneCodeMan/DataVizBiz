@@ -1,7 +1,3 @@
-/*
-
-*/
-
 function rank(arr) {
   var sorted = arr.slice().sort(function(a, b) {return b - a;});
   var ranks = arr.slice().map(function(v) { return sorted.indexOf(v) + 1 });
