@@ -44,5 +44,13 @@
   .container-fluid #gintama-div h3 {
     text-align: center; }
 
-.container-fluid .second-graph-div {
-  height: 700px; }
+.last {
+  min-height: 400px; }
+  .last .goodbye-text {
+    font-size: 25px; }
+  .last .social-div {
+    border: solid 1px black;
+    text-align: center;
+    padding: 50px;
+    color: #FCF7FF;
+    border-radius: 1px; }

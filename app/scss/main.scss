@@ -62,10 +62,21 @@
 
   }
 
-  .second-graph-div {
-    height: 700px;
+}
 
+.last {
+  min-height: 400px;
+
+  .goodbye-text {
+    font-size: 25px;
   }
 
+  .social-div {
+    border: solid 1px black;
+    text-align: center;
+    padding: 50px;
+    color: $default-white;
+    border-radius: 1px;
+  }
 
 }
