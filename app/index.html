@@ -33,7 +33,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-offset-2 col-md-8" id="gintama-div">
 			<h3 id="gintama-list-title">
-				Top <input type="text" v-model="count" id="count-input"> Longest Episode Titles
+				Top <input type="text" v-model="count" id="count-input" maxlength="3"> Longest Gintama Episode Titles
 			</h3>
 			<ol id="long-ep-list">
 				<li v-for="title in setCount(titles, count)" track-by="$index">

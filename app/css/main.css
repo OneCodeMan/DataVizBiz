@@ -8,7 +8,7 @@
   text-align: center;
   color: #FCF7FF;
   letter-spacing: 2px;
-  padding: 6em; }
+  padding: 8em; }
 
 .container-fluid .first-graph-div {
   max-width: 900px;
@@ -18,9 +18,16 @@
 .container-fluid #gintama-div {
   min-height: 600px;
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: 400; }
+  .container-fluid #gintama-div #count-input {
+    border: none;
+    border-bottom: 2px solid #72A1E5;
+    background: #E6E6E6;
+    width: 50px;
+    text-align: center; }
   .container-fluid #gintama-div strong {
-    font-size: 25px; }
+    font-size: 25px;
+    font-weight: 800; }
   .container-fluid #gintama-div .poop {
     font-size: 30px; }
   .container-fluid #gintama-div h3 {

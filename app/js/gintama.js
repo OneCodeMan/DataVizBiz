@@ -24,7 +24,8 @@ req.onload = function() {
 
       methods: {
         setCount: function(titles, limit) {
-          return titles.slice(0, limit);
+          if (!limit.isNaN && limit > 0)
+            return titles.slice(0, limit);
         }
       }
 

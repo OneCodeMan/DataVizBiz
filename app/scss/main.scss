@@ -11,7 +11,7 @@
   text-align: center;
   color: $default-white;
   letter-spacing: 2px;
-  padding: 6em;
+  padding: 8em;
 }
 
 .container-fluid {
@@ -25,10 +25,19 @@
   #gintama-div {
     min-height: 600px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 400;
+
+    #count-input {
+      border: none;
+      border-bottom: 2px solid $count-input-color;
+      background: $count-background;
+      width: 50px;
+      text-align: center;
+    }
 
     strong {
       font-size: 25px;
+      font-weight: 800;
     }
 
     .poop {
