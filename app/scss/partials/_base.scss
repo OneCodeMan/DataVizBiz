@@ -3,7 +3,7 @@ $bg-div: #F3FCF0;
 $gintama-bg: #F5F5F5;
 
 // Gintama
-$gintama-color: #3C3C3C;
+$gintama-text-color: #3C3C3C;
 
 // Input colors
 $count-input-color: #72A1E5;
@@ -11,8 +11,9 @@ $count-input-color: #72A1E5;
 // Jumbotron
 $anime-color: #81D2C7;
 $gintama-color: #90C2E7;
+$space-color: #070600;
 $jumbo-padding: 8em;
 
-$jumbo-colors: $anime-color, $gintama-color;
+$jumbo-colors: $anime-color, $gintama-color, $space-color;
 
 $default-white: #FCF7FF;

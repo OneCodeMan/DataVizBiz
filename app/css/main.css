@@ -4,6 +4,9 @@
 .jumbotron-2 {
   background-color: #90C2E7; }
 
+.jumbotron-3 {
+  background-color: #070600; }
+
 .jumbotron {
   text-align: center;
   color: #FCF7FF;
@@ -17,13 +20,16 @@
 
 .container-fluid #gintama-div {
   font-size: 20px;
-  font-weight: 400; }
+  font-weight: 400;
+  min-height: 750px; }
   .container-fluid #gintama-div #gintama-list-div {
     overflow-y: scroll;
     background: #F5F5F5;
     min-height: 600px;
     max-height: 600px;
     border-radius: 4px; }
+    .container-fluid #gintama-div #gintama-list-div ol {
+      color: #3C3C3C; }
   .container-fluid #gintama-div #count-input {
     border: none;
     border-bottom: 2px solid #72A1E5;
