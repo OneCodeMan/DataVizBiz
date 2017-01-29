@@ -1,9 +1,5 @@
 /*
-https://plot.ly/javascript/hover-events/
-TODO: Add more todos
-TODO: Filter
 
-TODO: The next chart!
 */
 
 function rank(arr) {
