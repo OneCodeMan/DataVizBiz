@@ -35,11 +35,13 @@
 			<h3 id="gintama-list-title">
 				Top <input type="text" v-model="count" id="count-input" maxlength="3"> Longest Gintama Episode Titles
 			</h3>
-			<ol id="long-ep-list">
-				<li v-for="title in setCount(titles, count)" track-by="$index">
-					<span class="poop">💩</span> <strong>{{title.length}}</strong> {{ title.text }}
-				</li>
-			</ol>
+			<div id="gintama-list-div">
+				<ol id="long-ep-list">
+					<li v-for="title in setCount(titles, count)" track-by="$index">
+						<span class="poop">💩</span> <strong>{{title.length}}</strong> {{ title.text }}
+					</li>
+				</ol>
+		</div>
 		</div>
 	</div>
 </div>

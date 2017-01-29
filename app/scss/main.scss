@@ -11,7 +11,7 @@
   text-align: center;
   color: $default-white;
   letter-spacing: 2px;
-  padding: 8em;
+  padding: $jumbo-padding;
 }
 
 .container-fluid {
@@ -19,18 +19,25 @@
   .first-graph-div {
     max-width: 900px;
     overflow: scroll;
-    min-height: 700px;
+    min-height: 725px;
   }
 
   #gintama-div {
-    min-height: 600px;
     font-size: 20px;
     font-weight: 400;
+
+    #gintama-list-div {
+      overflow-y: scroll;
+      background: $gintama-bg;
+      min-height: 600px;
+      max-height: 600px;
+      border-radius: 4px;
+    }
 
     #count-input {
       border: none;
       border-bottom: 2px solid $count-input-color;
-      background: $count-background;
+      background: $gintama-bg;
       width: 50px;
       text-align: center;
     }
