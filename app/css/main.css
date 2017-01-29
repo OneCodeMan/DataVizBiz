@@ -1,2 +1,16 @@
+.jumbotron-1 {
+  background-color: #81D2C7; }
+
+.jumbotron-2 {
+  background-color: #95B8D1; }
+
+.jumbotron {
+  text-align: center;
+  color: #FCF7FF;
+  letter-spacing: 2px;
+  padding: 6em; }
+
 .container-fluid .first-graph-div {
-  width: 1000px; }
+  max-width: 900px;
+  overflow: scroll;
+  min-height: 700px; }

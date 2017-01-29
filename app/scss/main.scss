@@ -1,5 +1,26 @@
-.container-fluid {
-  .first-graph-div {
-    width: 1000px;
+@import "partials/_base.scss";
+
+@each $current-color in $jumbo-colors {
+  $i: index($jumbo-colors, $current-color);
+  .jumbotron-#{$i} {
+    background-color: nth($jumbo-colors, $i);
   }
+}
+
+.jumbotron {
+  text-align: center;
+  color: $default-white;
+  letter-spacing: 2px;
+  padding: 6em;
+}
+
+.container-fluid {
+
+  .first-graph-div {
+    max-width: 900px;
+    overflow: scroll;
+    min-height: 700px;
+  }
+
+
 }
